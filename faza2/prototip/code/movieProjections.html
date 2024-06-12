@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--autor: Lana Jovanovic-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel = "stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel = "stylesheet" href = "listaFilmova.css">
+    <title>CineVerse ADMIN</title>
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+</head>
+<body>
+    
+    <div class="container-fluid">
+
+        <!--Header-->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <nav class="navbar navbar-expand-sm navbar-light fw-bold fixed-top">
+                    
+                    <a class="navbar-brand" href="./mainAdminPage.html" id = "brand-name">
+                        <img src="./logo.png" width="230" class="d-inline-block align-center" alt="logo">
+                    </a>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a href="./addAMovie.html" class="nav-link">Dodaj Film</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"> Korisnici </a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" href="./userAccounts.html">Korisnicki nalozi</a>
+                                <a class="dropdown-item" href="./userRequests.html">Korisnicki zahtevi</a>
+                                <a class="dropdown-item" href="./userSuggestions.html">Korisnicki predlozi filmova</a>
+                              </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="" id="navbarDropdownProjections" role="button" data-bs-toggle="dropdown"> Projekcije </a>
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item active" href="./movieProjections.html">Prikazi projekcije</a>
+                                <a class="dropdown-item" href="./addAProjection.html">Dodaj projekciju</a>
+                            </div>
+                        </li>
+                        <a href="./loginForm.html">
+                            <button class="btn btn-outline-dark rounded fw-bold" type="button">Prijava/Registracija</button>
+                        </a>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+
+        <!--Main-->
+        <div class="row">
+            <div class="col-lg-12" id = "main">
+
+                <div class="menu-wrapper">
+                    <p>Sortirano oo oceni</p>
+                    <p>Odaberite datum</p>
+                    <select id="myDropdown">
+                        <option value="option1">15.03.</option>
+                        <option value="option2">16.03.</option>
+                        <option value="option2">17.03.</option>
+                    </select>
+                </div>
+
+                <section>
+                    <div class="container">
+                        <div class="row mt-5">
+
+                            <!-- card one -->
+                            <div class="card">
+                                <img src="../images/DINA_223.jpg" class = "film-img">
+                                <div class="film-info">
+
+                                    <div class="left-film-info">
+                                        <div class="buttonWrapper" style="display: flex;flex-direction: row;">
+                                            <h5 class="card-title">DINA: DRUGI DEO</h5>
+                                        
+                                            <a href="addAProjection.html"><button class="btn btn-primary btn-sm mt-2 heart-btn"> Promeni termin projekcije </button></a>
+                                            
+
+                                        </div>
+                                        <p class="card-info">Ocena korisnika: 4,2/5 ★</p>
+                                        <p class="card-info">IMDB ocena: 9.2/10 ★</p>
+                                        <p class="card-info">akcija, drama, avantura | 166 min</p>
+                                    </div>
+
+                                    <div class="right-film-info">
+                                        <p class="card-info">Kratak sadržaj: Adaptacija naučno-fantastičnog klasika Frenka Herberta i nastavak velikog bioskopskog spektakla.</p>
+                                        <p class="card-info">Glumci: Florence Pugh, Rebecca Ferguson, Timothée Chalamet, Zendaya, Austin Butler</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- card two -->
+                            <div class="card">
+                                <img src="../images/One_Love_223x324px_cnplxx_SRB.jpg" class = "film-img">
+                                <div class="film-info">
+                                    
+                                    
+                                    <div class="left-film-info">
+                                        <div class="buttonWrapper" style="display: flex;flex-direction: row;">
+                                            <h5 class="card-title">BOB MARLI: ONE LOVE</h5>
+                                            
+                                            <a href="addAProjection.html"><button class="btn btn-primary btn-sm mt-2 heart-btn"> Promeni termin projekcije </button></a>
+    
+                                        </div>
+                                        <p class="card-info">Ocena korisnika: 3.7/5 ★</p>
+                                        <p class="card-info">IMDB ocena: 8.2/10 ★</p>
+                                        <p class="card-info">biografski, drama | 104 min</p>
+                                    </div>
+
+                                    <div class="right-film-info">
+                                        <p class="card-info">Kratak sadržaj: Otkrijte Marlijevu moćnu priču, po prvi put na velikom platnu!</p>
+                                        <p class="card-info">Glumci: Kingsley Ben-Adir, James Norton, Lashana Lynch, Michael Gandolfini, Anthony Welsh, Umi Myers</p>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+
+                            <!-- card three -->
+                            <div class="card">
+                                <img src="../images/kung_fu_223.jpg" class = "film-img">
+                                <div class="film-info">
+
+                                    <div class="left-film-info">
+                                        <div class="buttonWrapper" style="display: flex;flex-direction: row;">
+                                            <h5 class="card-title">KUNG FU PANDA 4</h5>
+                                            
+                                            <a href="addAProjection.html"><button class="btn btn-primary btn-sm mt-2 heart-btn"> Promeni termin projekcije </button></a>
+
+                                        </div>
+                                        <p class="card-info">Ocena korisnika: 5/5 ★</p>
+                                        <p class="card-info">IMDB ocena: 7.2/10 ★</p>
+                                        <p class="card-info">animirani, porodični, komedija, avantura | 94 min</p>
+                                    </div>
+
+                                    <div class="right-film-info">
+                                        <p class="card-info">Kratak sadržaj: Urnebesno novo poglavlje omiljene akcione komedije, Drimvorksove franšize.</p>
+                                        <p class="card-info">Glumci: Dragan Vujić, Đurđina Radić, Jadranka Selec, Milan Tubić, Miloš Samolov, Ognjen Drenjanin, Slobodan Ninković, Slobodan Tešić, Valentina Pavličić, Vojislav Brajović</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- card four -->
+                            <div class="card">
+                                <img src="../images/Lassie_2_za_Cinelplexx223.jpg" class = "film-img">
+                                <div class="film-info">
+                                    
+
+                                    <div class="left-film-info">
+                                        <div class="buttonWrapper" style="display: flex;flex-direction: row;">
+                                            <h5 class="card-title">LESI: NOVA AVANTURA</h5>
+                                            
+                                            <a href="addAProjection.html"><button class="btn btn-primary btn-sm mt-2 heart-btn"> Promeni termin projekcije </button></a>
+
+                                        </div> 
+                                        <p class="card-info">Ocena korisnika: 4/5 ★</p>
+                                        <p class="card-info">IMDB ocena: 6.8/10 ★</p>
+                                        <p class="card-info">avantura, porodični | 91 min</p>
+                                    </div>
+
+                                    <div class="right-film-info">
+                                        <p class="card-info">Kratak sadržaj: Nova avantura dobro poznate njuške stiže u bioskop!</p>
+                                        <p class="card-info">Glumci: Aleksandar Gliorić, Anja Orelj, Darija Vračević, Dragan Vujić, Dušica Novaković, Marko Ćurčić, Marko Marković, Milan Antonić, Mina Ivanović, Nataša Balog, Viktor Majer</p>
+                                    </div>
+
+                                </div>
+                            </div>                           
+                            
+                        </div>
+                    </div>
+                </section>
+            
+            </div>
+        </div>
+
+    <!--Modal-->
+    <div class="modal" id="oceniFilm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <!--Header-->
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: #ffb448;">
+                        Oceni "Dina: Drugi Deo"
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+
+                <!--Body-->
+                <div class="modal-body text-center">
+
+                    <form class="rating">
+                        <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                    </form>
+
+                    
+
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <button class="btn btn-success" data-bs-dismiss="modal">
+                        Potvrdi ocenu
+                    </button>
+                </div>
+
+            </div>  
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="py-3 text-center">
+        <div class="container">
+            <span class="text-muted">© 2024 Nemačke</span>
+        </div>
+    </footer>
+    </div>
+
+</body>
+</html>
+

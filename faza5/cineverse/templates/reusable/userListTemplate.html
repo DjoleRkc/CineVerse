@@ -1,0 +1,26 @@
+<!--autor: Lana Jovanovic-->
+<div class="list-group-item rounded">
+
+    <div class="details rounded">
+        <p>{{ user.username }}</p>
+        <p>{{ user.email }}</p>
+    </div>
+
+    <form class="userForm" method="post" action="{% url page %}">
+        {% csrf_token %}
+        <input type="hidden" name="action">
+        <input type="hidden" name="korisnickoime" value="{{ user.username }}">
+        <input type="hidden" name="email" value="{{ user.email }}">
+        <button type="submit" id=submitUserForm" style="display: none"></button>
+    </form>
+
+    <div class="btn-group">
+        {% if page == 'korisnickiZahtevi' %}
+            <button class="btn btn-primary rounded prihvatiDugme"> Prihvati </button>
+        {% endif %}
+        <button class="btn btn-danger rounded odbijDugme">
+            {% if page == 'korisnickiZahtevi' %} Odbij {% else %} Ukloni {% endif %}
+        </button>
+    </div>
+
+</div>

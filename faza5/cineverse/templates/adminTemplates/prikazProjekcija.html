@@ -1,0 +1,88 @@
+<!--autor: Lana Jovanovic-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% include 'reusable/adminHeadTemplate.html' %}
+
+    <link rel = "stylesheet" href = "../../static/css/listaFilmova.css">
+    <script src="{% static 'js/projekcije.js' %}"></script>
+</head>
+<body>
+    
+    <div class="container-fluid">
+
+        <!--Header-->
+        {% include 'reusable/adminHeaderTemplate.html' %}
+
+        <!--Main-->
+        <div class="row">
+            <div class="col-lg-12" id = "main">
+
+                <div class="menu-wrapper">
+                    <br><br><p>Odaberite datum</p>
+                    <select class="datumSelektor" id="{{ datum }}"> </select>
+                </div>
+
+
+                <div class='container' id="cards-holder" style="margin-top: 20px;">
+                    {% for film in filmovi%}
+                        <div class="card" data-imdb="{{ film.ocenaimdb }}" data-korisnikocena="{{ film.ocenakorisnika }}">
+                            <div class="col-sm-2 text-center">
+                                <img src="{{ film.slika }}" alt="{{ film.slika }}" style="height: 100%; width: auto;">
+                            </div>
+
+                            <div class="col-sm-5">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <a href="pregledFilma.html" class="film-name-link">
+                                            <h5 class="card-title">{{ film.naziv }}</h5>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="d-flex">
+                                            <button data-idfilma="{{ film.idfil }}" type="button" class="btn btn-primary me-2 promeniDugme" data-bs-toggle="dropdown">Promeni termin</button>
+                                                <div class="dropdown me-2">
+                                                    <ul class="dropdown-menu promeni-projekciju" aria-labelledby="dropdownMenuButton"></ul>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <p class="card-info">Ocena korisnika: {{ film.ocenakorisnika }} ★</p>
+                                    <p class="card-info">IMDB ocena: {{ film.ocenaimdb }} ★</p>
+                                    <p class="card-info">
+                                        {% for film_id, genre_names in film_genre_dict.items %}
+                                            {% if film_id == film.idfil %}
+                                                {% for genre_name in genre_names %}
+                                                    {{ genre_name }}{% if not forloop.last %}, {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        | {{ film.trajanje }} min
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-5">
+                                <p class="card-info">Kratak sadržaj: {{film.krataksadrzaj}}</p>
+                                <p class="card-info">Glumci: {{film.glumci}}</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+        {% include 'reusable/footerTemplate.html' %}
+
+    </div>
+
+</body>
+</html>
+

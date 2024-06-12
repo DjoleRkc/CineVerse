@@ -1,0 +1,40 @@
+<!--Autor:Đorđe Pajić-->
+
+<form class="predlogFilma">
+    <div class="input-group mb-3">
+    <input type="search" class="form-control" placeholder="Predloži film koji bi voleo da gledaš kod nas" size="40" id="predlogInput">
+    {% if user.is_authenticated %}
+        <button class="btn btn-outline-success rounded" type="button"  data-bs-target="#predloziFilm" id="predlogButton">Predloži</button>
+    {% else %}
+        <button class="btn btn-outline-success rounded" type="button"  data-bs-target="#predloziFilm" id="predlogButton" disabled>Morate biti ulogovani</button>
+    {% endif %}
+    </div>
+</form>
+
+<!--Modal-->
+<div class="modal predloziFilm" id="predloziFilm">
+    <div class="modal-dialog modal-dialog-centered" data-backdrop="static" data-keyboard="false">
+        <div class="modal-content">
+
+
+            <!--Header-->
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: #ffb448;">
+                    Hvala na predlogu!
+                </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+
+            <!--Body-->
+            <div class="modal-body text-center">
+                
+
+
+            </div>
+
+        </div>  
+    </div>
+</div>
+
+

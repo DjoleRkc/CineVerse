@@ -1,0 +1,62 @@
+
+<!--Autor:Đorđe Pajić-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervacije karata</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/rezervisiKartu.css' %}">
+    <script defer src="{% static 'js/rezervisiKartu.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="screen">PLATNO</div>
+        <div class="seating-area" data-rezSedista="{{zauzetaSedista}}">
+            <div class="row column-labels">
+                <div class="row-label"></div>
+                <div class="column-label" data-column="1">1</div>
+                <div class="column-label" data-column="2">2</div>
+                <div class="column-label" data-column="3">3</div>
+                <div class="column-label" data-column="4">4</div>
+                <div class="column-label" data-column="5">5</div>
+            </div>
+
+
+
+        </div>
+        <br>
+        <button id="rezervisiBtn" class="rezervisi-btn">Rezerviši</button>
+        <div id="selectedSeatsDisplay" class="selected-seats-display">Izabrana sedišta: </div>
+
+
+
+        <div class="movie-details" data-idprojekcije="{{idpro}}" data-idsale="{{sala}}">
+            <img src="{{slikaFilma}}" alt="Movie Image" class="movie-image">
+            <div class="details">
+            <p class="movie-title">{{filmIme}}</p>
+            <p class="timing">Termin: {{vremeFilma}}</p>
+            <p class="sala">Sala: {{sala}}</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div id="potvrda-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="Tekst"></p>
+            <div class="button-container">
+            <button id="nazadBtn" class="modal-btn nazad-btn">Nazad</button>
+            <button id="potvrdiRezBtn" class="modal-btn potvrdi-rez-btn" onclick="history.back()">Potvrdi rezervaciju</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

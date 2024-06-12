@@ -1,0 +1,148 @@
+
+<!--Autor:Đorđe Pajić-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel = "stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdowns = document.querySelectorAll('.dropdown-menu');
+            dropdowns.forEach(function(dropdown) {
+                dropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+                });
+            });
+
+            var potvrdiButton = document.getElementById('potvrdiRez');
+
+            document.getElementById('potvrdiRez').addEventListener('click', function() {
+                    var selectedSeats = document.querySelectorAll('.sediste-box:checked');
+                    var seatsList = "";
+                    selectedSeats.forEach(function(seat) {
+                        var seatNumber = seat.parentNode.textContent.trim().match(/[0-9]+[A-Za-z]+/);
+                        if (seatNumber) {
+                            seatsList += seatNumber[0] + ", ";
+                        }
+                    });
+                    if (seatsList.length > 0) {
+                        seatsList = seatsList.slice(0, -2);
+                        document.getElementById('selectedSeats').textContent = seatsList;
+                    } else {
+                        document.getElementById('selectedSeats').textContent = "Niste izabrali nijedno sedište.";
+                    }
+                });
+
+                potvrdiButton.disabled = true
+                document.querySelectorAll('.sediste-box').forEach(function(seatCheckbox) {
+            seatCheckbox.addEventListener('change', function() {
+                var atLeastOneChecked = Array.from(document.querySelectorAll('.sediste-box')).some(function(seatCheckbox) {
+                    return seatCheckbox.checked;
+                });
+                potvrdiButton.disabled = !atLeastOneChecked;
+            });
+            });
+        });
+    </script>
+
+
+
+    <link rel="stylesheet" href="rezervisiKartu.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="rezervisiButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Rezerviši
+        </button>
+
+        <div class="dropdown-menu" aria-labelledby="rezervisiButton" id="rezervisiDropdown">
+            <label class="dropdown-item" for="sed1a">Sedište 1A 
+                <input type="checkbox" class="sediste-box" id="sed1a">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed1b">Sedište 1B 
+                <input type="checkbox" class="sediste-box" id="sed1b">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed2a">Sedište 2A 
+                <input type="checkbox" class="sediste-box" id="sed2a">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed2b">Sedište 2B 
+                <input type="checkbox" class="sediste-box" id="sed2b">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed3a">Sedište 3A 
+                <input type="checkbox" class="sediste-box" id="sed3a">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed3b">Sedište 3B 
+                <input type="checkbox" class="sediste-box" id="sed3b">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed4a">Sedište 4A 
+                <input type="checkbox" class="sediste-box" id="sed4a">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed4b">Sedište 4B 
+                <input type="checkbox" class="sediste-box" id="sed4b">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed5a">Sedište 5A 
+                <input type="checkbox" class="sediste-box" id="sed5a">
+                <span class="sed-label"></span>
+            </label>
+    
+            <label class="dropdown-item" for="sed5b">Sedište 5B 
+                <input type="checkbox" class="sediste-box" id="sed5b">
+                <span class="sed-label"></span>
+            </label>
+
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderConfirmation" id="potvrdiRez">
+                Potvrdi Rezervaciju
+            </button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderConfirmation" tabindex="-1" role="dialog" aria-labelledby="orderConfirmationLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Uspešno ste rezervisali karte!
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                
+
+                <div class="modal-body">
+                    Detalje vaše rezervacije dobićete na email adresu korišćenu prilikom registracije. Vidimo se na mestu zabave!
+                    <p>Rezervisana sedišta: <span id="selectedSeats"></span></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Zatvori</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        
+    </div>
+    
+</body>
+</html>

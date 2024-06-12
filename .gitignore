@@ -1,0 +1,11 @@
+# local environment
+faza5/my_env
+
+# local secrets
+faza5/localSecrets.py
+
+# Python cache and configuration files
+.idea/
+*.iml
+*/__pycache__/*
+*.pyc

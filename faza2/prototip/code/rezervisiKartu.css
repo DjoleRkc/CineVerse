@@ -1,0 +1,36 @@
+/*Autor:Đorđe Pajić*/
+
+.dropdown-item:nth-child(even){
+    color: #6c757d;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.sediste-box{
+    display: none;
+}
+
+.sed-label{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.sediste-box:checked + .sed-label{
+    background-color: #007bff;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg viewBox="0 0 8 8" fill="%23fff" xmlns="http://www.w3.org/2000/svg"><path d="M6.564.75L3.109 6.217 1.436 4.75l-.896.896L3.109 7.75l4.021-6.896z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: #007bff;
+}
+
+#potvrdiRez{
+    bottom: 10px;
+    right: 10px;
+
+
+}
+

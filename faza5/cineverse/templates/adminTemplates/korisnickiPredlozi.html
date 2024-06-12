@@ -1,0 +1,61 @@
+<!--autor: Lana Jovanovic-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% include 'reusable/adminHeadTemplate.html' %}
+    <script src="{% static 'js/korisnickiPredlozi.js' %}"></script>
+</head>
+<body>
+    
+    <div class="container-fluid">
+
+        <!--Header-->
+        {% include 'reusable/adminHeaderTemplate.html' %}
+
+        <!--Main-->
+        <div class="row">
+            <div class="col-lg-12" id = "main">
+
+                <div class="row">
+                    <div class="col-lg-2"><br></div>
+
+                    <div class="col-lg-8" id = "korisnickiZahtevi">
+                        <div class="list-group rounded">
+                            <br>
+                            {% for predlog in predlaze %}
+                            <div class="list-group-item rounded">
+                                <div class="details rounded">
+                                    <h5>{{ predlog.film }}</h5>
+                                    <p>{{ predlog.idkor.username }}</p>
+                                </div>
+                                <form class="predloziForm" method="post" action="{% url page %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="akcija">
+                                    <input type="hidden" name="nazivFilma" value="{{ predlog.film }}">
+                                </form>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary rounded prihvatiPredlog">Prihvati</button>
+                                    <button class="btn btn-danger rounded odbijPredlog">Odbij</button>
+                                </div>
+
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-2"></div>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <!--Footer-->
+        {% include 'reusable/footerTemplate.html' %}
+    </div>
+
+</body>
+</html>
+

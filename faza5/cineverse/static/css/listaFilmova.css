@@ -1,0 +1,150 @@
+/*autor:Nikola Ostojić*/
+#brand-name{
+    color: #FFA500;
+    font-size: 35px;
+}
+
+#main{
+    padding-top: 60px;
+    background-color: #FFFDE8;
+    min-height: 600px;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+nav{
+    background-color: #FFFDE8;
+}
+
+.nav-item{
+    margin-left: 50px;
+}
+
+.navbar-brand {
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn{
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #FFA500;
+}
+
+#footer{
+    text-align: end;
+    font-style: italic;
+}
+
+#addAMovieForm{
+    background-color: #FCEFC8;
+    font-weight: bold;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.film-info{
+    padding-left: 20px;
+}
+
+.film-info{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.film-info p {
+    margin: 0;
+}
+
+.left-film-info{
+    width: 50%;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-film-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-film-info p{
+    margin-bottom: 10px;
+}
+
+.film-name-link{
+    text-decoration: none;
+    color: black;
+}
+
+.film-name-link:hover{
+    color: inherit;
+}
+
+.menu-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    margin-top: 0 !important;
+    padding-top: 0;
+}
+
+.buttonWrapper{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.heart-btn {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFA500;
+    border: 2px solid #FFA500;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.heart-icon::before {
+    content: '\2661';
+    font-size: 1.5em;
+}
+
+.heart-btn:hover .heart-icon::before {
+    content: '\2665';
+    color: red;
+}
+
+.btn:hover{
+    background-color: #FFA500;
+}
+
+.unclickable{
+    pointer-events: none;
+}
+
+.film-img{
+    width: auto;
+    height: 100%;
+}

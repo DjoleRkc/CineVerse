@@ -1,0 +1,92 @@
+#brand-name{
+    color: #FFA500;
+    font-size: 35px;
+}
+
+#main{
+    padding-top: 60px;
+    background-color: #FFFDE8;
+    min-height: 600px;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+nav{
+    background-color: #FFFDE8;
+}
+
+.nav-item{
+    margin-left: 50px;
+}
+
+.navbar-brand {
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn{
+    margin-left: 30px;
+    margin-right: 20px;
+    background-color: #FFA500;
+}
+
+#footer{
+    text-align: end;
+    font-style: italic;
+}
+
+#addAMovieForm{
+    background-color: #FCEFC8;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.btn-group {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+.btn-group .btn {
+margin-bottom: 10px;
+width: 100%;
+}
+
+.list-group-item {
+background-color: #fff;
+border-color: rgba(0, 0, 0, 0.125);
+border-radius: 8px;
+margin-top: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.list-group-item:hover {
+background-color: #f0f0f0;
+}
+
+.list-group-item .details h5 {
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+.list-group-item .details p {
+margin-bottom: 0;
+}
+
+#nazivFilmaDropdown, #salaDropdown, #kategorijaDropdown{
+    margin: 0px;
+    background-color: white;
+    color: black;
+    width: 100%;
+    text-align: center;
+}

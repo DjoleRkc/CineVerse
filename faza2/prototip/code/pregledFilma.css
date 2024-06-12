@@ -1,0 +1,19 @@
+/*Autor:Đorđe Pajić*/
+
+body{
+    background-color: #FFFDE8;
+}
+
+.poster{
+    max-width: 200px;
+    height: auto;
+}
+
+.label{
+    font-weight: bold;
+    color: #007bff;
+}
+
+.card-text{
+    margin-bottom: 0.5rem;
+}

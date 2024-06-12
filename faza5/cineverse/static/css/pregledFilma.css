@@ -1,0 +1,47 @@
+/*Autor:Đorđe Pajić*/
+
+body {
+    background-color: #FFFDE8;
+    font-family: Arial, sans-serif;
+}
+
+.card{
+    background-color: #FFFDE8;
+}
+
+
+.card-title, .card-text{
+    color: black;
+}
+
+
+.poster {
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+    object-fit: cover;
+}
+
+.label {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.card-text {
+    margin-bottom: 0.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.btn-primary {
+    border-color: #007bff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+

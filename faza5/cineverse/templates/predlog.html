@@ -1,0 +1,45 @@
+<!--Autor: Nikola Ostojic-->
+<form>
+    Otkrij svoj sledeći film! Unesi nekoliko filmova i/ili
+    nekoliko žanrova, a mi ćemo ti predložiti šta da gledaš
+    sledeće:
+
+    <div class="input-group mb-3">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Unesite imena nekoliko filmova"
+            size="40"
+            id="filmInput"
+        />
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Unesite nekoliko žanrova filmova"
+            size="40"
+            id="zanrInput"
+        />
+        <button
+            class="btn btn-outline-success"
+            type="button"
+            id="predloziButton"
+        >
+            Generiši predlog
+        </button>
+    </div>
+
+</form>
+
+
+<!--Modal-->
+<div class="modal" id="personalizovanPredlog">
+    <div class="modal-dialog modal-dialog-centered" data-backdrop="static" data-keyboard="false">
+        <div class="modal-content" id="MODAL">
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

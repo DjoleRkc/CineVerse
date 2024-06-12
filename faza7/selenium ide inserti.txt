@@ -1,0 +1,6 @@
+INSERT INTO Watchlist(idkor, idfil) VALUES(33, 18);
+INSERT INTO Nalog(id, password, username, email, uloga) VALUES(1, 'test123', 'test', 'test@gmail.com', 'Z');
+DELETE FROM Predlaze WHERE idKor = 33;
+DELETE FROM Predlaze WHERE nazivFilma = 33;
+DELETE FROM Ocenjuje WHERE idKor=33;
+INSERT INTO Projekcija VALUES('09.06.2024', 6, 1, 3)

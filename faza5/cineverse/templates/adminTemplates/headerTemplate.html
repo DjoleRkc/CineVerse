@@ -1,0 +1,43 @@
+<!-- autor: Lana Jovanovic-->
+
+{% load static %}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <nav class="navbar navbar-expand-sm navbar-light fw-bold fixed-top">
+
+            <a class="navbar-brand" href="{% url 'adminIndex' %}" id = "brand-name">
+                <img src="{%static 'images/logo.png'%}" width="230" class="d-inline-block align-center" alt="logo">
+            </a>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="{% url 'dodajFilm' %}" class="nav-link {% if page == 'dodajFilm' %}active{% endif %}">Dodaj Film</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle
+                    {% if page == 'korisnickiNalozi' or page == 'korisnickiZahtevi' or page == 'korisnickiPredlozi' %}active{% endif %}"
+                      id="navbarDropdown" role="button" data-bs-toggle="dropdown" > Korisnici </a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item {% if page == 'korisnickiNalozi' %}active{% endif %}" href="{% url 'korisnickiNalozi' %}">Korisnicki nalozi</a>
+                        <a class="dropdown-item {% if page == 'korisnickiZahtevi' %}active{% endif %}" href="{% url 'korisnickiZahtevi' %}">Korisnicki zahtevi</a>
+                        <a class="dropdown-item {% if page == 'korisnickiPredlozi' %}active{% endif %}" href="{% url 'korisnickiPredlozi' %}">Korisnicki predlozi filmova</a>
+                      </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle
+                     {% if page == 'prikazProjekcija' or page == 'dodajProjekciju' %}active{% endif %}"
+                       id="navbarDropdownProjections" role="button" data-bs-toggle="dropdown"> Projekcije </a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item {% if page == 'prikazProjekcija' %}active{% endif %}" href="{% url 'prikazProjekcija' %}">Prikazi projekcije</a>
+                        <a class="dropdown-item {% if page == 'dodajProjekciju' %}active{% endif %}" href="{% url 'dodajProjekciju' %}">Dodaj projekciju</a>
+                      </div>
+                </li>
+                <a href="">
+                    <button class="btn btn-outline-dark rounded fw-bold" type="button">Odjava</button>
+                </a>
+            </ul>
+
+        </nav>
+    </div>
+</div>

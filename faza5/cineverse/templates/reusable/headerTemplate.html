@@ -1,0 +1,56 @@
+<!--Autor:Đorđe Pajić--->
+
+{% load static %}
+
+<link rel = "stylesheet" href = "{% static 'css/headerTemplate.css' %}">
+
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12">
+		<nav class="navbar navbar-expand-sm navbar-light fw-bold fixed-top">
+			<a class="navbar-brand" href= "{% url 'landingPage' %}" id="brand-name">
+				<img
+					src="{% static 'images/logo.png' %}"
+					width="230"
+					class="d-inline-block align-center"
+					alt="logo"
+				/>
+			</a>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a href="{% url 'najboljeOcenjeni' %}" class="nav-link" id="najboljeOcenjeni"
+						>Najbolje Ocenjeni Filmovi</a
+					>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'sviFilmovi' %}" class="nav-link" id="sviFilmovi"
+						>Trenutno u Bioskopu</a
+					>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'sveProjekcije' %}" class="nav-link" id="projekcije"
+						>Sve Projekcije</a
+					>
+				</li>
+				<li class="nav-item">
+                    {% if user.is_authenticated %}
+					    <a href="{% url 'mojProfil' %}" class="nav-link" id="mojProfil">Moj Profil</a>
+                    {% else %}
+                       <a href="{% url 'login' %}" class="nav-link">Moj Profil</a>
+                    {% endif %}
+				</li>
+				{% if user.is_authenticated %}
+				<a href="{% url 'logout' %}">
+					<button class="btn btn-outline-dark rounded fw-bold" type="button" id="odjavaBtn">Odjava</button>
+				</a>
+				{% else %}
+				<a href="{% url 'login' %}">
+					<button class="btn btn-outline-dark rounded fw-bold" type="button" id="loginBtn">Prijava/Registracija</button>
+				</a>
+				{% endif %}
+
+			</ul>
+		</nav>
+	</div>
+</div>
+
